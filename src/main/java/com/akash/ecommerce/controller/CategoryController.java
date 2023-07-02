@@ -13,41 +13,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.akash.ecommerce.configuration.AppConstants;
 import com.akash.ecommerce.entity.Category;
 import com.akash.ecommerce.service.CategoryService;
 
-
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = AppConstants.client_base_url)
 @RequestMapping("/api/v1/categories")
 public class CategoryController {
-	
+
 	@Autowired
 	CategoryService categoryService;
-	
-	
+
 	@GetMapping
-	public List<Category> getAllCategorys(){
+	public List<Category> getAllCategorys() {
 		return categoryService.getAllCategories();
 	}
-	
+
 	@PostMapping
-	public Category createCategory(@RequestBody Category category){
+	public Category createCategory(@RequestBody Category category) {
 		return categoryService.addCategory(category);
 	}
-	
+
 	@GetMapping("/{categoryId}")
-	public Category getCategoryById(@PathVariable("categoryId") int categoryId){
+	public Category getCategoryById(@PathVariable("categoryId") int categoryId) {
 		return categoryService.getCategoryById(categoryId);
 	}
-	
+
 	@DeleteMapping("/{categoryId}")
-	public void deleteCategory(@PathVariable("categoryId") int categoryId){
+	public void deleteCategory(@PathVariable("categoryId") int categoryId) {
 		categoryService.deleteCategory(categoryId);
 	}
 
 	@PutMapping("/{categoryId}")
-	public Category updateCategory(@PathVariable("categoryId") int categoryId,@RequestBody Category category) {
+	public Category updateCategory(@PathVariable("categoryId") int categoryId, @RequestBody Category category) {
 		return categoryService.updateCategory(categoryId, category);
 	}
 

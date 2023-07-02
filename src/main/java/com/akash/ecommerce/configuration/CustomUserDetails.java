@@ -1,4 +1,4 @@
-package com.akash.ecommerce.security;
+package com.akash.ecommerce.configuration;
 
 import java.util.Collection;
 import java.util.Collections;

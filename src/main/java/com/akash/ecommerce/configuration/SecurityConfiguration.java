@@ -1,4 +1,4 @@
-package com.akash.ecommerce.security;
+package com.akash.ecommerce.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

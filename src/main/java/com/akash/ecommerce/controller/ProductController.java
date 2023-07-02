@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.akash.ecommerce.configuration.AppConstants;
 import com.akash.ecommerce.entity.Category;
 import com.akash.ecommerce.entity.Product;
 import com.akash.ecommerce.entity.Supplier;
@@ -32,7 +33,7 @@ import com.akash.ecommerce.service.SupplierService;
 import com.akash.ecommerce.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = AppConstants.client_base_url)
 @RequestMapping("/api/v1/products")
 public class ProductController {
 	@Autowired

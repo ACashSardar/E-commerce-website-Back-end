@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.akash.ecommerce.configuration.AppConstants;
 import com.akash.ecommerce.entity.Product;
 import com.akash.ecommerce.entity.Review;
 import com.akash.ecommerce.entity.User;
@@ -18,7 +19,7 @@ import com.akash.ecommerce.service.ReviewService;
 import com.akash.ecommerce.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = AppConstants.client_base_url)
 @RequestMapping("/api/v1/reviews")
 public class ReviewController {
 	@Autowired
