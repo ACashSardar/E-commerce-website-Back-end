@@ -3,6 +3,8 @@ package com.akash.ecommerce.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,6 +32,7 @@ public class Category {
 	private String categoryName;
 	private String categoryDesc;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 	List<Product> products=new ArrayList<>();
 }

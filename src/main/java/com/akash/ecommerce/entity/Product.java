@@ -38,7 +38,6 @@ public class Product {
 	private int catId;
 	private int supId;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private Category category;

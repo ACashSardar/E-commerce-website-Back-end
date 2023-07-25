@@ -52,7 +52,6 @@ public class ProductController {
 	
 	@GetMapping
 	public List<Product> getAllProducts(){
-
 		return productService.getAllProducts();
 	}
 	
@@ -62,8 +61,7 @@ public class ProductController {
 		return productService.getProductsByCategoryId(catId);
 	}
 	
-	@PostMapping(value = "/category/{categoryId}/supplier/{supplierId}",
-			consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@PostMapping(value = "/category/{categoryId}/supplier/{supplierId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public Product createProduct (
 			@RequestPart("file") MultipartFile file,
 			@RequestPart("document") Product product,

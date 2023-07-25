@@ -43,6 +43,7 @@ public class User implements Serializable{
 	private String phoneNo;
 	private String address;
 	private String role;
+	private String profilePic;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
